@@ -3,6 +3,10 @@ import {View, StyleSheet, Text, ScrollView, TextInput} from "react-native";
 import {useState} from "react";
 import * as Yup from 'yup'
 import {isValidEmail, isValidObjField, updateError} from "../utils/methods";
+import FormContainer from "../../components/FormContainer";
+import {Formik} from "formik";
+import FormInput from "../../components/FormInput";
+import FormSubmitButton from "../../components/FormSubmitButton";
 
 const validationSchema = Yup.object({
     fullName : Yup.string()
@@ -49,17 +53,97 @@ export default function Signup({navigation}){
         return true;
     };
 
+    const submitForm = () =>{
+        if (isValidForm()){
+            console.log(userInfo)
+        }
+    }
+
+    function signup() {
+
+    }
+
     return(
         <SafeAreaView>
             <ScrollView>
-                <View style={styles.topContent}>
-                    <Text style={styles.topText}> Create Account </Text>
-                    <Text style={styles.subTxt}>Create an account so you can start shipping!!!</Text>
-                </View>
+                    <View style={styles.topContent}>
+                        <Text style={styles.topText}> Create Account </Text>
+                        <Text style={styles.subTxt}>Create an account so you can start shipping!!!</Text>
+                    </View>
 
-                <TextInput
-                    />
+                <FormContainer>
+                    <Formik
+                        initialValues={userInfo}
+                        validationSchema={validationSchema}
+                        onSubmit={signup}
+                        >
+                        {({
+                            values,
+                            errors,
+                            touched,
+                            isSubmitting,
+                            handleChange,
+                            handleBlur,
+                            handleSubmit,
+                        }) => {
+                            const {fullName , email, password, confirmPassword} = values
+                            return(
+                                <>
+                                    <FormInput
+                                        value={{fullName}}
+                                        error={touched.fullName && errors.fullName}
+                                        onChangeText={handleBlur('fullName')}
+                                        label='fullName'
+                                        placeholder='Enter you full name '
+                                    />
+                                    <FormInput
+                                        value={email}
+                                        error={touched.email && errors.email}
+                                        onChangeText={handleChange('email')}
+                                        onBlur={handleBlur('email')}
+                                        autoCapitalize='none'
+                                        label='Email'
+                                        placeholder='example@email.com'
+                                    />
+                                    <FormInput
+                                        value={phoneNumber}
+                                        error={touched.phoneNumber && errors.phoneNumber}
+                                        onChangeText={handleChange('phoneNumber')}
+                                        onBlur={handleBlur('phoneNumber')}
+                                        label='phoneNumber'
+                                        placeholder='enter phone number'
+                                    />
+                                    <FormInput
+                                        value={password}
+                                        error={touched.password && errors.password}
+                                        onChangeText={handleChange('password')}
+                                        onBlur={handleBlur('password')}
+                                        autoCapitalize='none'
+                                        secureTextEntry
+                                        label='Password'
+                                        placeholder='********'
+                                    />
+                                    <FormInput
+                                        value={confirmPassword}
+                                        error={touched.confirmPassword && errors.confirmPassword}
+                                        onChangeText={handleChange('confirmPassword')}
+                                        onBlur={handleBlur('confirmPassword')}
+                                        autoCapitalize='none'
+                                        secureTextEntry
+                                        label='Confirm Password'
+                                        placeholder='********'
+                                    />
+                                    <FormSubmitButton
+                                        submitting={isSubmitting}
+                                        onPress={handleSubmit}
+                                        title='Sign up'
+                                    />
+                                </>
+                            )
+                        }}
 
+                    </Formik>
+                </FormContainer>
             </ScrollView>
         </SafeAreaView>
         )
