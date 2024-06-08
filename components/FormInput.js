@@ -1,4 +1,4 @@
-import {Text, TextInput, View} from "react-native";
+import {Text, TextInput, View,StyleSheet} from "react-native";
 
 
 const FormInput = props =>{

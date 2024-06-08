@@ -17,6 +17,9 @@ const styles = StyleSheet.create({
     container : {
         width : Dimensions.get('window').width,
         paddingHorizontal : 20,
+        display : "flex",
+        justifyContent : "center",
+        marginTop : 70
     }
 })
 

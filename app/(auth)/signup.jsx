@@ -1,5 +1,5 @@
 import {SafeAreaView} from "react-native-safe-area-context";
-import {View, StyleSheet, Text, ScrollView, TextInput} from "react-native";
+import {View, StyleSheet, Text, ScrollView} from "react-native";
 import {useState} from "react";
 import * as Yup from 'yup'
 import {isValidEmail, isValidObjField, updateError} from "../utils/methods";
@@ -7,6 +7,7 @@ import FormContainer from "../../components/FormContainer";
 import {Formik} from "formik";
 import FormInput from "../../components/FormInput";
 import FormSubmitButton from "../../components/FormSubmitButton";
+import {Link} from "expo-router";
 
 const validationSchema = Yup.object({
     fullName : Yup.string()
@@ -68,7 +69,7 @@ export default function Signup({navigation}){
             <ScrollView>
                     <View style={styles.topContent}>
                         <Text style={styles.topText}> Create Account </Text>
-                        <Text style={styles.subTxt}>Create an account so you can start shipping!!!</Text>
+                        <Text style={styles.subTxt}>Create an account so you can start shipping</Text>
                     </View>
 
                 <FormContainer>
@@ -86,14 +87,15 @@ export default function Signup({navigation}){
                             handleBlur,
                             handleSubmit,
                         }) => {
-                            const {fullName , email, password, confirmPassword} = values
+                            const {fullName , email, phoneNumber, password, confirmPassword} = values
                             return(
                                 <>
                                     <FormInput
-                                        value={{fullName}}
+                                        value={fullName}
                                         error={touched.fullName && errors.fullName}
-                                        onChangeText={handleBlur('fullName')}
-                                        label='fullName'
+                                        onChangeText={handleChange('fullName')}
+                                        onBlur={handleBlur('fullName')}
+                                        label='FullName'
                                         placeholder='Enter you full name '
                                     />
                                     <FormInput
@@ -110,8 +112,8 @@ export default function Signup({navigation}){
                                         error={touched.phoneNumber && errors.phoneNumber}
                                         onChangeText={handleChange('phoneNumber')}
                                         onBlur={handleBlur('phoneNumber')}
-                                        label='phoneNumber'
-                                        placeholder='enter phone number'
+                                        label='PhoneNumber'
+                                        placeholder='Enter phone number'
                                     />
                                     <FormInput
                                         value={password}
@@ -138,7 +140,12 @@ export default function Signup({navigation}){
                                         onPress={handleSubmit}
                                         title='Sign up'
                                     />
+                                    <View style={styles.already}>
+                                        <Text>Already have an account ? <Link href={"signin"}> sign in</Link></Text>
+                                    </View>
+
                                 </>
+
                             )
                         }}
 
@@ -151,7 +158,21 @@ export default function Signup({navigation}){
 
 const styles = StyleSheet.create({
     topContent : {
-
+        display : "flex",
+        justifyContent : "center",
+        alignItems :"center",
+         gap : 4
+    },
+    topText :{
+        fontSize :40,
+        color : 'orange'
+    },
+    subTxt : {
+        fontSize : 20,
+        color : 'orange'
+    },
+    already : {
+        marginTop : 20
     }
 
 
