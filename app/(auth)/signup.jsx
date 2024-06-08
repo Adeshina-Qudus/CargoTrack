@@ -66,7 +66,6 @@ export default function Signup({navigation}){
 
     return(
         <SafeAreaView>
-            <ScrollView>
                     <View style={styles.topContent}>
                         <Text style={styles.topText}> Create Account </Text>
                         <Text style={styles.subTxt}>Create an account so you can start shipping</Text>
@@ -141,7 +140,8 @@ export default function Signup({navigation}){
                                         title='Sign up'
                                     />
                                     <View style={styles.already}>
-                                        <Text>Already have an account ? <Link href={"signin"}> sign in</Link></Text>
+                                        <Text>Already have an account ? </Text>
+                                        <Link href={"signin"} style={{color : "orange"}}> sign in</Link>
                                     </View>
 
                                 </>
@@ -151,7 +151,6 @@ export default function Signup({navigation}){
 
                     </Formik>
                 </FormContainer>
-            </ScrollView>
         </SafeAreaView>
         )
 }
@@ -165,14 +164,18 @@ const styles = StyleSheet.create({
     },
     topText :{
         fontSize :40,
-        color : 'orange'
+        color : 'black'
     },
     subTxt : {
         fontSize : 20,
-        color : 'orange'
+        color : 'black'
     },
     already : {
-        marginTop : 20
+        marginTop : 20,
+        display : "flex",
+        flexDirection : "row",
+        justifyContent : "space-between"
+
     }
 
 

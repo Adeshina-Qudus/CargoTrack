@@ -7,6 +7,8 @@ export default function RootLayout() {
       <Stack.Screen name="(boarding)/boardingPage" options={{headerShown:false}}/>
       <Stack.Screen name="(auth)/signuporsignin" options={{headerShown:false}}/>
       <Stack.Screen name="(auth)/signup" options={{headerShown:false}}/>
+      <Stack.Screen name="(auth)/signin" options={{headerShown:false}}/>
+      <Stack.Screen name="(home)/homePage" options={{headerShown:false}}/>
     </Stack>
   );
 }
