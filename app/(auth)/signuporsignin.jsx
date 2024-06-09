@@ -26,7 +26,7 @@ export default function SignUpOrSignIn() {
                 <Image source={image.signInOrSignUp}/>
             </View>
 
-            <Text style={styles.text}>CargoTrack</Text>
+            <Text style={styles.textSty}>CargoTrack</Text>
             <View style={styles.regisButton}>
                 <View>
                     <TouchableOpacity
@@ -50,7 +50,7 @@ export default function SignUpOrSignIn() {
 }
 
 const styles = StyleSheet.create({
-    text: {
+    textSty: {
         fontSize: 50,
         textAlign: 'center',
         color : "orange",

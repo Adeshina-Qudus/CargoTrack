@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Image, SafeAreaView, TouchableOpacity, View, StyleSheet, Text, ImageBackground } from 'react-native';
+import {SafeAreaView, TouchableOpacity, View, StyleSheet, Text, ImageBackground } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {useNavigation, useRouter} from 'expo-router';
+import {useRouter} from 'expo-router';
 import FormContainer from '../../components/FormContainer';
 import FormInput from '../../components/FormInput';
 import images from '../../constants/images';
-import {DrawerActions} from "@react-navigation/native";
 
 export default function HomePage() {
     const [searchShipment, setSearchShipment] = useState({ trackingId: '' });

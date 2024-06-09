@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StyleSheet, Text, TouchableOpacity, View, ImageBackground } from 'react-native';
-import { Link, router } from 'expo-router';
+import {router } from 'expo-router';
 import background from '../../constants/images';
 
 export default function BoardingPage() {

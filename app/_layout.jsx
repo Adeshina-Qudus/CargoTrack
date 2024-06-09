@@ -1,12 +1,6 @@
 import React from 'react'
 import { Drawer } from 'expo-router/drawer';
-
 import CustomDrawerContent from './ContentController';
-import SignUpOrSignIn from "./(auth)/signuporsignin";
-import BoardingPage from "./(boarding)/boardingPage";
-import Signup from "./(auth)/signup";
-import SignIn from "./(auth)/signin";
-import HomePage from "./(home)/homePage";
 
 
 export default function _layout() {
@@ -18,7 +12,6 @@ export default function _layout() {
         }}
         drawerContent={CustomDrawerContent}
     >
-
         <Drawer.Screen
             name="index"
             options={{
@@ -62,6 +55,5 @@ export default function _layout() {
                 headerShown : false
             }}
         />
-
    </Drawer>
 }
