@@ -2,6 +2,11 @@ import React from 'react'
 import { Drawer } from 'expo-router/drawer';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import CustomDrawerContent from './ContentController';
+import SignUpOrSignIn from "./(auth)/signuporsignin";
+import BoardingPage from "./(boarding)/boardingPage";
+import Signup from "./(auth)/signup";
+import SignIn from "./(auth)/signin";
+import HomePage from "./(home)/homePage";
 
 
 export default function _layout() {
@@ -15,26 +20,53 @@ export default function _layout() {
     >
 
         <Drawer.Screen
-            name="home"
+            name="index"
             options={{
-                drawerLabel: 'Home',
-                title: 'Home',
-                drawerIcon: ({size, color})=>(
-                    <Ionicons name='md-home' size={size} color={color} />
-                )
-
+                title: 'index',
+                headerShown : false
             }}
         />
         <Drawer.Screen
-            name="index"
+            name="(boarding)/boardingPage"
+            component={BoardingPage}
             options={{
-                drawerLabel: 'About',
-                title: 'About',
-                drawerIcon: ({size, color})=>(
-                    <Ionicons name='ios-information-circle' size={size} color={color} />
-                )
-
+                title: '(boarding)/boardingPage',
+                headerShown : false
             }}
         />
+        <Drawer.Screen
+            name="(auth)/signuporsignin"
+            component={SignUpOrSignIn}
+            options={{
+                title: '(auth)/signuporsignin',
+                headerShown : false
+            }}
+        />
+        <Drawer.Screen
+            name="(auth)/signup"
+            component={Signup}
+            options={{
+                drawerLabel: 'Create Account',
+                title: '(auth)/signup',
+                headerShown : false
+            }}
+        />
+        <Drawer.Screen
+            name="(auth)/signin"
+            component={SignIn}
+            options={{
+                title: '(auth)/signin',
+                headerShown : false
+            }}
+        />
+        <Drawer.Screen
+            name="(home)/homePage"
+            component={HomePage}
+            options={{
+                title: '(home)/homePage',
+                headerShown : false
+            }}
+        />
+
    </Drawer>
 }
