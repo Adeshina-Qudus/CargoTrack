@@ -1,6 +1,6 @@
 import React from 'react'
 import { Drawer } from 'expo-router/drawer';
-import Ionicons from '@expo/vector-icons/Ionicons';
+
 import CustomDrawerContent from './ContentController';
 import SignUpOrSignIn from "./(auth)/signuporsignin";
 import BoardingPage from "./(boarding)/boardingPage";
@@ -28,7 +28,6 @@ export default function _layout() {
         />
         <Drawer.Screen
             name="(boarding)/boardingPage"
-            component={BoardingPage}
             options={{
                 title: '(boarding)/boardingPage',
                 headerShown : false
@@ -36,7 +35,6 @@ export default function _layout() {
         />
         <Drawer.Screen
             name="(auth)/signuporsignin"
-            component={SignUpOrSignIn}
             options={{
                 title: '(auth)/signuporsignin',
                 headerShown : false
@@ -44,7 +42,6 @@ export default function _layout() {
         />
         <Drawer.Screen
             name="(auth)/signup"
-            component={Signup}
             options={{
                 drawerLabel: 'Create Account',
                 title: '(auth)/signup',
@@ -53,7 +50,6 @@ export default function _layout() {
         />
         <Drawer.Screen
             name="(auth)/signin"
-            component={SignIn}
             options={{
                 title: '(auth)/signin',
                 headerShown : false
@@ -61,7 +57,6 @@ export default function _layout() {
         />
         <Drawer.Screen
             name="(home)/homePage"
-            component={HomePage}
             options={{
                 title: '(home)/homePage',
                 headerShown : false
