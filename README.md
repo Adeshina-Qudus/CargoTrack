@@ -1,50 +1,67 @@
-# Welcome to your Expo app 👋
+# CargoTrack
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Table of Contents
+- [Introduction](#introduction)
+- [Requirements](#requirements)
+- [validation](#validation)
+- [Features](#features)
 
-## Get started
+## Introduction
 
-1. Install dependencies
+CargoTrack is a cutting-edge shipping platform designed to streamline logistics and enhance supply chain efficiency. Our user-friendly interface and powerful tools allow businesses to track and manage their shipments in real-time, ensuring transparency and reliability from departure to delivery. With features such as automated alerts, comprehensive reporting, and seamless integration with existing systems, CargoTrack empowers businesses to optimize their shipping operations and improve customer satisfaction.
 
-   ```bash
-   npm install
-   ```
 
-2. Start the app
+##requirements
+   Expo
 
-   ```bash
-    npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+## Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- createAccount
+- Login
+- TrackShipment
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
 
-When you're ready, run:
+##validation
 
-```bash
-npm run reset-project
-```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Account Creation
+The Register page allows new users to create an account on CargoTrack by providing their personal details.
+Form Fields
 
-## Learn more
+      All Fields are Required 
+       Full Name: The user's complete name for personalization and communication.
+                    fullName.length must be grather than three
+       Email: The user's email address for account verification and communication.
+                   Email as to be a valid mail 
+       Phone Number: The user's phone number for contact purposes.
+                   valid phoneNumber
+       Password: The user's password for account security.
+             password length Must not be less than eight
+               Start with a capital letter 
+               add a number and symbol 
+       Confirm Password: Confirmation of the user's password to ensure accuracy.
+             must match password
 
-To learn more about developing your project with Expo, look at the following resources:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Login 
 
-## Join the community
+Login Page
 
-Join our community of developers creating universal apps.
+The Login page allows existing users to access their CargoTrack account.
+Form Fields
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+    Email: The user's registered email address.
+    Password: The user's password.
+
+
+  
+
+
+
+
+
+   
+
+
