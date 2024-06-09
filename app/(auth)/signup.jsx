@@ -22,7 +22,7 @@ const validationSchema = Yup.object({
         .required("password is required "),
     confirmPassword : Yup.string().equals(
         [Yup.ref('password'),null],
-        'passsword does not match'
+        'password does not match'
     )
 })
 export default function Signup({navigation}){

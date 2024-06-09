@@ -1,31 +1,27 @@
 import React, { useState } from 'react';
 import { Image, SafeAreaView, TouchableOpacity, View, StyleSheet, Text, ImageBackground } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { useRouter } from 'expo-router';
+import {useNavigation, useRouter} from 'expo-router';
 import FormContainer from '../../components/FormContainer';
 import FormInput from '../../components/FormInput';
 import images from '../../constants/images';
+import {DrawerActions} from "@react-navigation/native";
 
-export default function HomePage({ navigation }) {
+export default function HomePage() {
     const [searchShipment, setSearchShipment] = useState({ trackingId: '' });
     const { trackingId } = searchShipment;
-    const router = useRouter();
-
+    // const navigation = useNavigation();
+        const router = useRouter()
     const handleOnChangeText = (value, fieldName) => {
         setSearchShipment({ ...searchShipment, [fieldName]: value });
     };
 
     const handleTrackShipping = () => {
-        router.push("trackItems/trackItems");
+        router.navigate("trackItems/trackItems");
     };
 
     return (
         <SafeAreaView style={styles.container}>
-            <View style={styles.menuButtonContainer}>
-                <TouchableOpacity onPress={() => navigation.openDrawer()} style={styles.menuButton}>
-                    <Icon name="menu" size={30} color="#000" />
-                </TouchableOpacity>
-            </View>
             <ImageBackground
                 style={styles.shippingBackground}
                 imageStyle={styles.image}
