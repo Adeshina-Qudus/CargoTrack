@@ -25,6 +25,8 @@ const validationSchema = Yup.object({
         'password does not match'
     )
 })
+
+
 export default function Signup({navigation}){
     const [userInfo,setUserInfo] = useState({
         fullName : '',

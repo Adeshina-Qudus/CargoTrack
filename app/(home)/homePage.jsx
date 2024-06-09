@@ -10,7 +10,7 @@ import {DrawerActions} from "@react-navigation/native";
 export default function HomePage() {
     const [searchShipment, setSearchShipment] = useState({ trackingId: '' });
     const { trackingId } = searchShipment;
-    // const navigation = useNavigation();
+
         const router = useRouter()
     const handleOnChangeText = (value, fieldName) => {
         setSearchShipment({ ...searchShipment, [fieldName]: value });
