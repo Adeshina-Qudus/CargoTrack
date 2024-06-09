@@ -6,7 +6,6 @@ import images from '../constants/images';
 
 export default function Index() {
     const router = useRouter();
-
     useEffect(() => {
         const timer = setTimeout(() => {
             router.push("./(boarding)/boardingPage");

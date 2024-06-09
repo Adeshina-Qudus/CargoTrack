@@ -1,10 +1,11 @@
 
 import React, { useState } from 'react';
-import {View, StyleSheet, Text, TextInput, SafeAreaView} from 'react-native';
+import {View, StyleSheet, Text, SafeAreaView} from 'react-native';
 import { isValidEmail, isValidObjField, updateError } from '../utils/methods';
 import FormContainer from '../../components/FormContainer'
 import FormInput from '../../components/FormInput';
 import FormSubmitButton from '../../components/FormSubmitButton';
+import {router} from "expo-router";
    export default function SignIn(){
         const [userInfo, setUserInfo] = useState({
             email: '',
@@ -31,6 +32,7 @@ import FormSubmitButton from '../../components/FormSubmitButton';
             return true;
         };
         const submitForm = async () => {
+            router.push('homePage')
 
         };
 
