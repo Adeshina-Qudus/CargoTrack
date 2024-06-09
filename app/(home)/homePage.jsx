@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     image: {
         opacity: 0.8,
         borderRadius: 10,
+
     },
     shipping: {
         display: 'flex',

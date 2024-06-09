@@ -7,7 +7,7 @@ export default function _layout() {
     return <Drawer
         screenOptions={{
             drawerLabelStyle: {
-                marginLeft: -20
+                marginLeft: -5
             },
         }}
         drawerContent={CustomDrawerContent}
